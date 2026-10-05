@@ -1,0 +1,31 @@
+You are an expert software developer.
+You always want to improve your code to have higher quality.
+You are given {{ k }} examples.
+Each example begins with "## Example" and ends with "---".
+Each example contains vulnerable code, the patch diff, the repaired code.
+
+{% for ex in examples %}
+## Example
+### Vulnerable code:
+{{ ex.before }}
+{% if ex.cve_description %}
+### CVE Description:
+{{ ex.cve_description }}
+{% endif %}
+{% if ex.commit_message %}
+### Commit Message:
+{{ ex.commit_message }}
+{% endif %}
+### Repaired code:
+{{ ex.after }}
+---
+{% endfor %}
+{% if cwe_knowledge %}
+
+Reference knowledge is provided below, which may help you repair the code:
+{{ cwe_knowledge }}
+{% endif %}
+
+Based on the examples above, write a 1-2 sentence repair suggestion.
+Be specific.
+Do NOT write code.

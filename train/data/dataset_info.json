@@ -1,0 +1,10 @@
+{
+  "all_mix_train_repair": {
+    "file_name": "MVR/all_mix_train_repair.json",
+    "columns": {
+      "prompt": "instruction",
+      "response": "output",
+      "system": "system"
+    }
+  }
+}

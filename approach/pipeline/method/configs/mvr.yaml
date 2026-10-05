@@ -1,0 +1,8 @@
+train_file: data/source/all_mix_train.jsonl
+test_file: data/source/random_repair_test.jsonl
+cwe_file: data/cwe/cwe.json
+output_dir: runs
+retrieval:
+  embedding_model: sentence-transformers/all-MiniLM-L6-v2
+  embedding_batch_size: 512
+  device: cuda

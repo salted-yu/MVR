@@ -1,0 +1,22 @@
+You are an expert software developer.
+You always want to improve your code to have higher quality.
+You are given {{ k }} examples.
+Each example begins with "## Example" and ends with "---".
+Each example contains vulnerable code, the patch diff, the repaired code, and extracted repair knowledge.
+Your task is to repair the vulnerable code based on the examples{% if cwe_knowledge %} and reference knowledge{% endif %}.
+Please don't generate any comments in the code.
+Please only generate the fixed code without your explanation.
+
+{% for ex in examples %}
+## Example
+### Vulnerable code:
+{{ ex.before }}
+### Repaired code:
+{{ ex.after }}
+---
+{% endfor %}
+{% if cwe_knowledge %}
+
+Reference knowledge is provided below, which may help you repair the code:
+{{ cwe_knowledge }}
+{% endif %}

@@ -20,7 +20,7 @@ Performance comparison between the proposed framework and state-of-the-art vulne
 | Qwen2.5-Coder | 0.72 | <ins>79.68</ins> | <ins>89.08</ins> | <ins>85.99</ins> | <ins>87.38</ins> |
 | Claude Sonnet 5 | 6.62 | 75.69 | 85.91 | 81.80 | 82.58 |
 | GPT-5.6-Terra | 1.81 | 62.42 | 79.16 | 71.36 | 72.16 |
-| **Ours** | **17.93** | **83.65** | **91.54** | **88.56** | **89.18** |
+| **VulCAR** | **17.93** | **83.65** | **91.54** | **88.56** | **89.18** |
 | _Gain over best baseline_ | +9.15 | +3.97 | +2.46 | +2.57 | +1.80 |
 
 ## Ablation Study
@@ -29,7 +29,7 @@ Ablation study of our framework. Subscripts denote the absolute change relative 
 
 | Variant | EM (%) | BLEU-4 | ROUGE-1 | ROUGE-2 | ROUGE-L |
 | :--- | ---: | ---: | ---: | ---: | ---: |
-| **Ours (full)** | **17.93** | **83.65** | **91.54** | **88.56** | **89.18** |
+| **VulCAR** | **17.93** | **83.65** | **91.54** | **88.56** | **89.18** |
 | _Data and training_ | | | | | |
 | w/o Reference Corpus | 13.72<sub>↓4.21</sub> | 82.41<sub>↓1.24</sub> | 90.55<sub>↓0.99</sub> | 87.50<sub>↓1.06</sub> | 88.07<sub>↓1.11</sub> |
 | w/o SFT | 15.64<sub>↓2.29</sub> | 81.88<sub>↓1.77</sub> | 90.41<sub>↓1.13</sub> | 87.11<sub>↓1.45</sub> | 87.88<sub>↓1.30</sub> |
@@ -40,7 +40,7 @@ Ablation study of our framework. Subscripts denote the absolute change relative 
 
 The Exact Match score of four approaches across the Top 25 Most Dangerous CWE-IDs in 2025.
 
-| Rank | CWE | Ours | VulMaster | PailGen | Claude Sonnet 5 | Total |
+| Rank | CWE | VulCAR | VulMaster | PailGen | Claude Sonnet 5 | Total |
 | ---: | :--- | ---: | ---: | ---: | ---: | ---: |
 | 1 | 79: Cross-site Scripting | **6 (12.24%)** | 3 (6.12%) | 3 (6.12%) | 0 (0.00%) | 49 |
 | 2 | 89: SQL Injection | **3 (18.75%)** | 1 (6.25%) | 1 (6.25%) | 2 (12.50%) | 16 |
@@ -73,7 +73,7 @@ Each method cell reports the number of exact repairs, followed by the correspond
 
 ## Overview
 
-This repository provides the prepared MVR data, LoRA fine-tuning code for the Repair Agent, and the pipeline for retrieval, Advisor comment generation, code repair, and EM evaluation.
+This repository contains the replication package for **VulCAR: Context-Aware Augmented Generation for Multilingual Vulnerability Repair**, including the prepared datasets, LoRA fine-tuning code for the Repair Agent, and the pipeline for retrieval, Advisor comment generation, code repair, and evaluation.
 
 ## Directory Structure
 
